@@ -1,0 +1,20 @@
+{
+  "name": "2025-sanshiroike-lidar",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/regional-plannning-and-information-lab/2025-sanshiroike-lidar#readme",
+  "bugs": {
+    "url": "https://github.com/regional-plannning-and-information-lab/2025-sanshiroike-lidar/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/regional-plannning-and-information-lab/2025-sanshiroike-lidar.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "setup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
