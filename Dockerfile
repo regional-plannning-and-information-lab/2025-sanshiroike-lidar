@@ -57,4 +57,4 @@ COPY . .
 # /usr/local/binは標準でPATHに含まれています。
 
 # コンテナ起動時に実行するコマンドを設定
-# CMD ["your-app-command"]
+CMD ["sh", "-c", "npm run start"]
