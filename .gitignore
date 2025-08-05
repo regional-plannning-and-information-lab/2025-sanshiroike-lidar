@@ -1,4 +1,6 @@
-*.xyz
-*.las
+raw-xyz/
+raw-las/
+pdal-pipelines/
+potree-files/
 .DS_Store
 node_modules/
