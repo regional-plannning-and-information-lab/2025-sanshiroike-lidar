@@ -2,6 +2,7 @@ import { downloadXyzFiles, convertXyzToLas } from "./tools/setup.js";
 import { runPotreeConverter } from "./tools/convert-to-potree.js";
 import { connectXyzFiles } from "./tools/connect-xyz-files.js";
 import { transformAllFiles } from "./tools/transform-points.js";
+import { exportToPotreeViewer } from "./tools/export-to-potree-viewer.js";
 import path from 'path';
 import fs from 'fs';
 
@@ -37,5 +38,12 @@ console.log("🔁補正後のLASファイルをPotreeConverterで変換してい
 await runPotreeConverter(path.resolve(__dirname, "./transformed-las/combined.las"), path.resolve(__dirname, "./potree-files/transformed-combined"));
 console.log("🌲 補正後のファイルをPotreeConverterで変換しました！");
 
+// PotreeConverterの変換結果を、ビューワーが参照できる場所にコピーする
+await exportToPotreeViewer();
+console.log("📂 Potreeビューワー用のファイルをエクスポートしました！");
+
 // 完了メッセージを表示する
 console.log("\n🎉 すべての処理が完了しました！");
+console.log("🔗 Potreeビューワーは http://localhost:1234/ で開けます。");
+console.log("🔗 補正前のファイルは http://localhost:1234/examples/sanshiroike-raw.html で開けます。");
+console.log("🔗 補正後のファイルは http://localhost:1234/examples/sanshiroike-transformed.html で開けます。");
