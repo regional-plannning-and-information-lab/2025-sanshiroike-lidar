@@ -16,10 +16,6 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "setup": "node ./tools/setup.js",
-		"start": "node main.js"
-  },
-  "dependencies": {
-    "@inquirer/prompts": "^7.8.0"
+    "start": "node main.js"
   }
 }

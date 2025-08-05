@@ -57,6 +57,7 @@ RUN mkdir build && cd build && \
     make -j$(nproc) && \
     cp PotreeConverter /usr/local/bin/
 
+
 # Potree(ビューワー)のソースコードをダウンロード
 WORKDIR /usr/src/
 RUN git clone https://github.com/potree/potree.git \
@@ -74,8 +75,12 @@ RUN npm install
 # アプリケーションのソースコードをコンテナにコピー
 COPY . .
 
-# PotreeConverterがどこにあるかを確認するために、PATHを更新する必要はありません。
-# /usr/local/binは標準でPATHに含まれています。
+# 変換のアプリケーションを実行
+RUN npm start
 
-# コンテナ起動時に実行するコマンドを設定
+# Potree(ビューワー)の作業ディレクトリに移動
+WORKDIR /usr/src/potree
+
+# ビューワーを起動
 CMD ["sh", "-c", "npm run start"]
+EXPOSE 1234

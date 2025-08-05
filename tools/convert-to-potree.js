@@ -1,36 +1,16 @@
-import spawn from 'child_process';
+import { spawn } from "child_process";
+import path from 'path';
+import fs from 'fs';
 
 const potreeConverterPath = "/usr/local/bin/PotreeConverter";
 
-export const convertToPotree = async (overwrite) => {
+export const runPotreeConverter = async (inputPath, outputDir) => {
 
-	// potree-files ディレクトリが存在しないときは作成する
-	const potreeFilesDir = path.join(__dirname, "potree-files");
-	if (!fs.existsSync(potreeFilesDir)) {
-		fs.mkdirSync(potreeFilesDir, { recursive: true });
+	// outputDirが存在しない場合は作成する
+	if (!fs.existsSync(outputDir)) {
+		fs.mkdirSync(outputDir, { recursive: true });
 	}
 
-	// raw-las ディレクトリ内のすべてのファイルを取得
-	const files = fs.readdirSync(rawLasDir).filter(file => file.endsWith('.las'));
-
-	// 各ファイルをPotree形式に変換（全ての変換が終わるまで待つ）
-	const tasks = files.map(file => {
-		const inputPath = path.join(rawLasDir, file);
-		const outputDir = path.join(potreeFilesDir, path.basename(file, '.las'));
-
-		if (!fs.existsSync(outputDir) || overwrite) {
-			return runPotreeConverter(inputPath, outputDir);
-		} else {
-			console.log(`Skipping conversion for ${file}, already exists.`);
-			return Promise.resolve();
-		}
-	});
-
-	await Promise.all(tasks);
-
-}
-
-const runPotreeConverter = async (inputPath, outputDir) => {
 	const command = potreeConverterPath;
 	const args = [
 		inputPath,
