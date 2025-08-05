@@ -8,7 +8,7 @@ const __dirname = path.resolve();
 export const transformAllFiles = async () => {
 
 	// transformed-xyzのディレクトリが存在しない場合は作成
-	const transformedXyzDir = path.join(__dirname, '../data');
+	const transformedXyzDir = path.join(__dirname, './transformed-xyz');
 	if (!fs.existsSync(transformedXyzDir)) {
 		fs.mkdirSync(transformedXyzDir, { recursive: true });
 	}
@@ -16,7 +16,7 @@ export const transformAllFiles = async () => {
 	// transformationsオブジェクトの各変換行列に対してファイルを変換
 	for (const [key, matrix] of Object.entries(transformations)) {
 		const inputPath = path.join(__dirname, './raw-xyz', `${key}`);
-		const outputPath = path.join(__dirname, '../transformed-xyz', `${key}`);
+		const outputPath = path.join(__dirname, './transformed-xyz', `${key}`);
 		await transformPoints(inputPath, outputPath, matrix);
 	}
 }
