@@ -17,6 +17,11 @@ const files = [
 	"7-9.xyz",
 	"9-11.xyz",
 	"9-13.xyz",
+	"result1.xyz",
+	"result2.xyz",
+	"result3.xyz",
+	"result4.xyz",
+	"result5.xyz"
 ];
 
 const rawXyzDir = path.join(__dirname, "raw-xyz");
