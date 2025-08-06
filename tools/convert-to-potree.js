@@ -1,6 +1,7 @@
 import { spawn } from "child_process";
 import path from 'path';
 import fs from 'fs';
+import process from "process";
 
 const potreeConverterPath = "/usr/local/bin/PotreeConverter";
 
@@ -8,6 +9,8 @@ export const runPotreeConverter = async (inputPath, outputDir) => {
 
 	// outputDirが存在しない場合は作成する
 	if (!fs.existsSync(outputDir)) {
+		console.log(`Current directory: ${process.cwd()}`);
+		console.log(`Attempting to make ${outputDir}`);
 		fs.mkdirSync(outputDir, { recursive: true });
 	}
 
