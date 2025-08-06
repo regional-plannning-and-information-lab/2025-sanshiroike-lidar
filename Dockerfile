@@ -82,5 +82,5 @@ RUN npm start
 WORKDIR /usr/src/potree
 
 # ビューワーを起動
-CMD ["sh", "-c", "npm run start"]
 EXPOSE 1234
+CMD ["sh", "-c", "npm run start"]
