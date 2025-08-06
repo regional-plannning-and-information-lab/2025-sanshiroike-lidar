@@ -38,7 +38,7 @@ docker build -t docker-sanshiroike-1 --progress=plain .
 続いて、
 
 ```bash
-docker run -it docker-sanshiroike-1
+docker run -it -p 1234:1234 docker-sanshiroike-1
 ```
 
 を実行すると、ローカルサーバーが立ち上がり、ビューワーソフトを開けるようになります。

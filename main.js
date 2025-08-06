@@ -44,6 +44,4 @@ console.log("📂 Potreeビューワー用のファイルをエクスポート�
 
 // 完了メッセージを表示する
 console.log("\n🎉 すべての処理が完了しました！");
-console.log("🔗 Potreeビューワーは http://localhost:1234/ で開けます。");
-console.log("🔗 補正前のファイルは http://localhost:1234/examples/sanshiroike-raw.html で開けます。");
-console.log("🔗 補正後のファイルは http://localhost:1234/examples/sanshiroike-transformed.html で開けます。");
+console.log("☝️ Dockerコンテナを起動して、ビューワーを確認してください。");
