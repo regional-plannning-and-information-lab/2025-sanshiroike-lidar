@@ -1,5 +1,9 @@
 raw-xyz/
+raw-connected/
 raw-las/
+transformed-xyz/
+transformed-connected/
+transformed-las/
 pdal-pipelines/
 potree-files/
 .DS_Store
